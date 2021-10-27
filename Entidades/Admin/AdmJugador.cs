@@ -81,9 +81,9 @@ namespace Entidades.Admin
             adapter.SelectCommand.Parameters.Add("@FechaNacimiento", SqlDbType.Date).Value = jugador.FechaNacimiento;
             adapter.SelectCommand.Parameters.Add("@Puesto", SqlDbType.VarChar, 50).Value = jugador.Puesto;
 
-            int filasAfectadas = adapter.SelectCommand.ExecuteNonQuery();
+            int filasModificadas = adapter.SelectCommand.ExecuteNonQuery();
             AdminDB.ConectarBase().Close();
-            return filasAfectadas;
+            return filasModificadas;
         }
 
         public static int Modificar(Jugador jugador)
@@ -98,9 +98,9 @@ namespace Entidades.Admin
             adapter.SelectCommand.Parameters.Add("@Puesto", SqlDbType.VarChar, 50).Value = jugador.Puesto;
             adapter.SelectCommand.Parameters.Add("@Id", SqlDbType.Int).Value = jugador.Id;
 
-            int filasAfectadas = adapter.SelectCommand.ExecuteNonQuery();
+            int filasModificadas = adapter.SelectCommand.ExecuteNonQuery();
             AdminDB.ConectarBase().Close();
-            return filasAfectadas;
+            return filasModificadas;
         }
 
         public static int Eliminar(int idJugador)
@@ -111,10 +111,10 @@ namespace Entidades.Admin
 
             adapter.SelectCommand.Parameters.Add("@Id", SqlDbType.Int).Value = idJugador;
 
-            int filasAfectadas = adapter.SelectCommand.ExecuteNonQuery();
+            int filasModificadas = adapter.SelectCommand.ExecuteNonQuery();
 
             AdminDB.ConectarBase().Close();
-            return filasAfectadas;
+            return filasModificadas;
         }
 
 
